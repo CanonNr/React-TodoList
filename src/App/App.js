@@ -26,7 +26,6 @@ class App extends React.Component {
   }
 
   getChildrenContent = (result,content) => {
-    console.log(123)
     const arr = this.state.taskList.slice()
     arr.push({
       status:false,
@@ -34,13 +33,17 @@ class App extends React.Component {
     })
     this.setState({"taskList":arr})
   }
-
+  delItem(index){
+    const arr = this.state.taskList.slice()
+    delete arr[index]
+    this.setState({"taskList":arr})
+  }
   render() {
     return (
       <div className="App">
         <Header />
         <Input parent={this} />
-        <TaskList list={this.state.taskList} />
+        <TaskList list={this.state.taskList} parent={this}/>
       </div>
     );
   }
