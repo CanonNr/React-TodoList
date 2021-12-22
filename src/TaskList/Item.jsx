@@ -7,12 +7,12 @@ class Item extends React.Component {
         this.checkObject = null
         console.log(this.props.item)
         this.state = { 
-            iscomplete : this.props.item.status,
-            content: this.props.item.content
+            iscomplete : this.props.item.status,   // true 完成,false 未完成
+            content: this.props.item.content 
         }
     }
     componentDidMount(){
-        if(!this.state.iscomplete){
+        if(this.state.iscomplete){
             this.contentObject.style.textDecoration="line-through"  // 设置删除线
             this.checkObject.checked = true // 初始化时按照原状态渲染复选按钮
         }else{

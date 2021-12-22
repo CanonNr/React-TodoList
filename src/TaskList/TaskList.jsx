@@ -10,7 +10,7 @@ export default class TaskList extends React.Component {
     getBomList(){
         let result = []
         console.log(this.state.taskList)
-        this.state.taskList.map((item,index)=>{
+        this.props.list.map((item,index)=>{
             result[index] = <Item item={item} index={index} key={index}/>
         })
         return result

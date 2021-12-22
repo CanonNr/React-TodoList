@@ -42,11 +42,10 @@ class Input extends React.Component {
      */
     submit() {
         if (this.state.value != null && this.state.value != "") {
-            // todo 提交操作
-
+            // 提交操作
+            this.props.parent.getChildrenContent(this, this.state.value)
             // 置空Value
             this.setState({ value: "" })
-            console.log(this.state.value + "-提交成功")
         } else {
             alert("提交的任务内容不能为空")
         }
