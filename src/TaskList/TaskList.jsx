@@ -1,18 +1,25 @@
 import React from "react";
 import Item from "./Item";
 export default class TaskList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
+    constructor(list) {
+        super(list);
+        this.state = {
+            taskList : list.list
+        }
     }
-    render() { 
-        return ( 
+    getBomList(){
+        let result = []
+        console.log(this.state.taskList)
+        this.state.taskList.map((item,index)=>{
+            result[index] = <Item item={item} index={index} key={index}/>
+        })
+        return result
+    }
+    render() {
+        return (
             <div>
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+                {this.getBomList()}
             </div>
-         );
+        );
     }
 }
