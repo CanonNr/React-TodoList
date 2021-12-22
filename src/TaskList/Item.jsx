@@ -62,6 +62,7 @@ class Item extends React.Component {
                 onMouseOut={e=>this.itemMouse(e,"out")}
                 >
                 <input type="checkbox"
+                    className="itemCheck"
                     onChange={e => this.completeFlag(e)}
                     ref={e => { this.setCheckObject(e) }} />
                 <span className="content" ref={e => this.setContentObject(e)}>
