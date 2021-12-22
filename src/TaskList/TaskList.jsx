@@ -9,6 +9,9 @@ export default class TaskList extends React.Component {
         return ( 
             <div>
                 <Item />
+                <Item />
+                <Item />
+                <Item />
             </div>
          );
     }
