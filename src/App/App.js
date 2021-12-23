@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../Header/Header.jsx';
 import Input from '../Input/Input';
 import TaskList from '../TaskList/TaskList';
+import Nine from '../Nine/Nine';
 
 class App extends React.Component {
   constructor(props) {
@@ -40,11 +41,14 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App">
-        <Header />
-        <Input parent={this} />
-        <TaskList list={this.state.taskList} parent={this}/>
+      <div>
+        <Nine/>
       </div>
+      // <div className="App">
+      //   <Header />
+      //   <Input parent={this} />
+      //   <TaskList list={this.state.taskList} parent={this}/>
+      // </div>
     );
   }
 }
