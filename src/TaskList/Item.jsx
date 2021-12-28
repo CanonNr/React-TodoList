@@ -1,5 +1,6 @@
 import React from "react";
 import "./Item.css";
+
 class Item extends React.Component {
     constructor(item, index,parent) {
         super(item, index)
@@ -7,6 +8,7 @@ class Item extends React.Component {
         this.checkObject = null
         this.delObject = null
         this.state = {
+            primaryKey:this.props.item.id,
             index:this.props.index,
             iscomplete: this.props.item.status,   // true 完成,false 未完成
             content: this.props.item.content,
@@ -48,12 +50,12 @@ class Item extends React.Component {
         }
     }
     itemMouse(e,type){
-        let action = type == "over" ? "" : "none"
-        this.delObject.style.display=action
+        this.delObject.style.display = (type === "over" ? "" : "none")
     }
     delItem(e){
         // 点击删除按钮
         this.state.parent.delItem(this.state.index)
+        console.log(this.state.primaryKey)
     }
     render() {
         return (
