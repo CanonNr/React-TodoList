@@ -41,14 +41,11 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <Nine/>
+      <div className="App">
+        <Header />
+        <Input parent={this} />
+        <TaskList list={this.state.taskList} parent={this}/>
       </div>
-      // <div className="App">
-      //   <Header />
-      //   <Input parent={this} />
-      //   <TaskList list={this.state.taskList} parent={this}/>
-      // </div>
     );
   }
 }
